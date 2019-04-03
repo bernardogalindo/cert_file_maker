@@ -9,7 +9,7 @@ module CertFileMaker
       yfile = ::YAML.load_file(file)
       configuration = yfile if yfile
       names = configuration.fetch('cert_names')
-      @@cert_names = names.split(',') if names
+      @@cert_names = names.split(',').map(&:strip) if names
     rescue KeyError => e
       puts "=> CertFileMaker: config/cert_file_maker.yml #{e}"
       raise KeyError
@@ -25,7 +25,7 @@ module CertFileMaker
 
   def self.generate
     begin
-      puts '=> CertFileMaker starting'
+      puts '=> CertFileMaker loading'
       cert_names.each do |cert|
         next if File.exists?("#{cert.downcase}.pem")
         cert_file = ENV.fetch(cert)
@@ -34,7 +34,7 @@ module CertFileMaker
         end
         puts "=> CertFileMaker => Created: #{cert.downcase}.pem"
       end
-      puts '=== CertFileMaker configured ==='
+      puts '=== CertFileMaker loaded ==='
     rescue KeyError => e
       puts "=> CertFileMaker Requires Environment variable exists => #{e}"
       raise KeyError

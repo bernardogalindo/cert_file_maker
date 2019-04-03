@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require './lib/cert_file_maker'
+require 'test_helper'
 
 class TestCertFileMaker < Minitest::Test
   def setup

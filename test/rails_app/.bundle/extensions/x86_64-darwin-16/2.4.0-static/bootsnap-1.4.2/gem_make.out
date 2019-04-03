@@ -1,0 +1,15 @@
+current directory: /Users/bernardogalindo/projects/caninolabs/cert_file_maker/test/rails_app/.bundle/gems/bootsnap-1.4.2/ext/bootsnap
+/Users/bernardogalindo/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20190402-72757-1ye9zds.rb extconf.rb
+creating Makefile
+
+current directory: /Users/bernardogalindo/projects/caninolabs/cert_file_maker/test/rails_app/.bundle/gems/bootsnap-1.4.2/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/bernardogalindo/projects/caninolabs/cert_file_maker/test/rails_app/.bundle/gems/bootsnap-1.4.2/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/bernardogalindo/projects/caninolabs/cert_file_maker/test/rails_app/.bundle/gems/bootsnap-1.4.2/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20190402-72757-o08hw8/bootsnap

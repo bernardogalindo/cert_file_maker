@@ -14,6 +14,4 @@ Gem::Specification.new do |s|
   s.email           = 'bernardo466@gmail.com'
 
   s.require_paths   = ['lib']
-
-  s.add_development_dependency 'minitest'
 end
