@@ -52,4 +52,31 @@ OUTPUT
       end
     end
   end
+
+  def test_cert_file_maker_output_when_rails_server_using_encrypted_cred
+    @pid = nil
+    Dir.chdir(@rails_app_dir) do
+      begin
+        primary, replica = PTY.open
+        @pid = Process.spawn("RAILS_ENV='development' bin/rails server", chdir: Dir.pwd, in: replica, out: replica, err: replica)
+        #puts "Rails booting on pid => #{@pid}"
+output = <<-OUTPUT
+=> CertFileMaker loading\r
+=> CertFileMaker => Created: cert_test.pem\r
+=> CertFileMaker => Created: private_key.pem\r
+=== CertFileMaker loaded ===\r
+OUTPUT
+        assert_output(output.force_encoding('utf-8'), primary)
+        assert File.exists?('cert_test.pem')
+        assert File.exists?('private_key.pem')
+      ensure
+        puts 'ensuring'
+        File.delete('cert_test.pem')
+        File.delete('private_key.pem')
+        Process.kill("TERM", @pid)
+        Process.kill("TERM", @pid)
+        #Process.wait(@pid)
+      end
+    end
+  end
 end
