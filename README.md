@@ -10,13 +10,17 @@ Add `cert_file_maker` to your Gemfile
   gem 'cert_file_maker'
 ```
 
-Add `cert_file_maker.yml' config file to your `config` folder. Config folder
+Add `cert_file_maker.yml` config file to your `config` folder. Config folder
 should live inside application root.
+
 
 ```ruby
   # config/cert_file_maker.yml
   cert_names: 'PRIVATE_KEY,CERT'
 ```
+#### Important cert_names
+This variable should contain the exac name of your credential,
+environment_variables.
 
 The certification file should contain the `cert_names` key with a string of
 names separeted by a comma.
