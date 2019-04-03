@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cert_file_maker (0.0.1)
+    cert_file_maker (0.0.3)
 
 GEM
   remote: https://rubygems.org/
@@ -129,6 +129,7 @@ PLATFORMS
 
 DEPENDENCIES
   cert_file_maker!
+  ffi (>= 1.9.24)
   listen
   rails (~> 5.2)
   sqlite3

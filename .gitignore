@@ -1,3 +1,4 @@
 *.swp
 .bundle/*
 test/rails_app/.bundle/*
+test/rails_app/config/master.key
