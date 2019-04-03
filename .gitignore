@@ -1,2 +1,3 @@
 *.swp
 .bundle/*
+test/rails_app/.bundle/*
