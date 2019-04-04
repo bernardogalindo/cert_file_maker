@@ -13,6 +13,6 @@ Gem::Specification.new do |s|
   s.author          = 'Bernardo Galindo'
   s.email           = 'bernardo466@gmail.com'
 
-  s.files           = ['lib/cert_file_maker.rb']
-  s.require_paths   = ['lib']
+  s.files           = `git ls-files`.split("\n")
+  s.require_path    = 'lib'
 end
