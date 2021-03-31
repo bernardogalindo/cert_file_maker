@@ -32,6 +32,7 @@ module CertFileMaker
         File.open("#{cert.downcase}.pem", 'w+') do |f|
           f.write cert_file
         end
+        File.chmod(0400, "#{cert.downcase}.pem")
         puts "=> CertFileMaker => Created: #{cert.downcase}.pem"
       end
       puts '=== CertFileMaker loaded ==='
